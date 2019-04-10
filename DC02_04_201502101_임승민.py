@@ -172,9 +172,11 @@ def listen_linux(frame_rate=44100, interval=0.1):
                 if '201502101 ' in byte_stream:
                    byte_stream = byte_stream.replace("201502101 ","")
                    display(byte_stream)
-                if '201502101' in byte_stream:
+                elif '201502101' in byte_stream:
                    byte_stream = byte_stream.replace("201502101","")
                    display(byte_stream)
+                else :
+                    break
                 #print(int(ord(byte_stream[1])))
                 byte_stream = byte_stream.encode("utf-8")
                 byte_stream = RSCodec(FEC_BYTES).encode(byte_stream)
